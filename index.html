@@ -3,41 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎</title>
+    <title>我的 GitHub Pages</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* 基础重置与全屏背景设置 */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Helvetica, sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 预留全屏背景位置 - 替换下方URL或删除注释使用颜色 */
+            background: url('pexels.LeonAschemann.jpg') center/cover no-repeat;
+            /* background: linear-gradient(135deg, #6e8efb, #a777e3); 备用渐变背景 */
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        /* 半透明遮罩增强文字可读性 */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        /* 主内容容器 */
+        .container {
             max-width: 800px;
-            margin: 0 auto;
-            color: #333;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
         }
+
         h1 {
-            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        a {
-            color: #3498db;
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* 按钮容器 */
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
             text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 180px;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 页脚样式 */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .buttons { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <h1>这里什么都没有</h1>
-    <p>目前还在建设中。</p>
-    <p>暂时还没有跳转的链接</p>
-    <p>后续可能会添加</p>
-    
-    <h2>点击此处有特效</h2>
-    <p>骗你的</p>
-    
-    <h2>联系我</h2>
-    <p>算了，别联系我</p>
+    <div class="container">
+        <h1>欢迎</h1>
+        <p>来到这里查看萌新指南</p>
+        <p>或者干干别的</p>
+        
+        <p style="color: rgba(255, 255, 255, 0.5);">我没有去做手机端的适配</p>
+        <p style="color: rgba(255, 255, 255, 0.5);">或许把网址复制在手机端用某些浏览器确实能用,但是很难保证使用体验</p>
 
-    <a href="lily.html">不明白技能</a> | <a href="mxzl.html">萌新指南</a>
+
+        <div class="buttons">
+            <!-- 三个未填充的链接按钮 -->
+            <a href="mxzl.html" class="btn">萌新指南</a>
+            <a href="lily.html" class="btn">技能简述</a>
+            <a href="#" class="btn">项目3</a>
+        </div>
+    </div>
+
+    <footer>
+        © <span id="year"></span> 由 GitHub Pages 托管
+    </footer>
+
+    <script>
+        // 自动更新年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // 控制台彩蛋
+        console.log('👋 欢迎开发者！替换背景图请修改CSS中的background-url');
+    </script>
 </body>
 </html>

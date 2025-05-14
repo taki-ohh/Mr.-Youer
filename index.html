@@ -1,64 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html    < html lang = "应用" >lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sl指南主界面</title>
-    <style>
+       < >风格<style>
         /* 基础重置与全屏背景设置 */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+               保证金:0;margin: 0;
+               填充:0;padding: 0;
+               盒模型尺寸计算方式：内容、内边距、边框的总和决定元素的尺寸。box-sizing: border-box;
+            字体族：'Segoe UI'，'PingFang SC'，'Microsoft YaHei'，无衬线字体；font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
         
-        body {
+           身体{body {
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+               显示:flex;display: flex;
+               flex-direction: column； 翻译成中文为：主轴方向：列。flex-direction: column;
+               justify-content: center； 译为中文为：内容水平居中对齐；justify-content: center;
             align-items: flex-start; /* 改为左对齐 */
-            background: url('photo\pexels.LeonAschemann.webp') center/cover no-repeat;
-            color: white;
+            background: url('photo/pexels.LeonAschemann.webp') center/cover no-repeat;
+               颜色:白色;color: white;
             text-align: left; /* 文字左对齐 */
-            position: relative;
-            padding: 0 10%;
-            overflow-x: hidden;
+               位置:相对;position: relative;
+               填充：0 - 10%；padding: 0 10%;
+               overflow-x:隐藏;overflow-x: hidden;
         }
 
         /* 半透明渐变遮罩增强可读性 */
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+           身体::{后body::after {
+               内容:”;content: '';
+               位置:绝对的;position: absolute;
+               上图:0;top: 0;
+               左:0;left: 0;
+               宽度:100%;width: 100%;
+            height: 100%;   高度:100%;
             background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-            z-index: -1;
+            z-index: -1;   z - index: 1;
         }
 
         /* 主内容容器 */
         .container {
             max-width: 800px;
-            padding: 2rem;
+            padding: 2rem;   填充:2快速眼动;
             animation: slideIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            opacity: 0;
+            opacity: 0;   透明度:0;
             transform: translateX(-50px);
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3rem;   字体大小:3快速眼动;
             margin-bottom: 1.5rem;
             text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            position: relative;
+            position: relative;   位置:相对;
             display: inline-block;
         }
 
         h1::after {
-            content: '';
-            position: absolute;
+            content: '';   内容:”;
+            position: absolute;   位置:绝对的;
             bottom: -10px;
             left: 0;
             width: 100%;

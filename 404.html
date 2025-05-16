@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
- 
         body {
             font-family: Arial, sans-serif;
             background-color: var(--dark);
@@ -41,26 +40,28 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: var(--primary);
-            color: white;
+            background: white;
+            color: black;
             text-decoration: none;
+            border: 2px solid black;
             border-radius: 50px;
             font-weight: bold;
             margin: 20px 10px;
             transition: all 0.3s;
+            box-sizing: border-box;
+            min-width: 150px;
+            text-align: center;
         }
         
         .btn:hover {
-            background: #FF8C42;
             transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .btn-secondary {
-            background: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background: #00C8FF;
+            background: black;
+            color: white;
+            border: 2px solid white;
         }
         
         .error-message {
@@ -70,10 +71,22 @@
             font-size: 0.9rem;
         }
         
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
         @media (max-width: 768px) {
             h1 { font-size: 4rem; }
             h2 { font-size: 1.5rem; }
             .container { padding: 1.5rem; margin: 1rem; }
+            .btn {
+                padding: 10px 20px;
+                min-width: 120px;
+            }
         }
     </style>
 </head>
@@ -86,7 +99,7 @@
         <p>也可能是IMC的阴谋，他们总爱搞这些小动作</p>
         <p><del>绝对不是戴维斯又按错了按钮</del></p>
         
-        <div>
+        <div class="button-container">
             <a href="https://taki-ohh.github.io/Mr.-Youer" class="btn">
                 返回首页
             </a>
